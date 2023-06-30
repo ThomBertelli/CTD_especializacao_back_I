@@ -1,0 +1,19 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888/
+  application:
+    name: movie-service
+
+  #H2
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:~/springMovieService;AUTO_SERVER=TRUE
+    username: sa
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
